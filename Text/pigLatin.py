@@ -17,7 +17,7 @@ try:
 except NameError:
     pass
 
-vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'] # NEVAH  Y/y/why
+vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'] # Didn't include y
 pigList = list()
 
 # Process command line arguments. If none given, ask at run-time.
