@@ -44,12 +44,53 @@ try:
 except NameError:
     pass
 
-# Process command line arguments. If none given, ask at run-time.
-if len(sys.argv) > 1:
-    # sys.argv[0] is the python file being ran; ie, reverseString.py
-    phrase = ' '.join(sys.argv[1:])
-else:
-    phrase = input("Enter a word/phrase: ")
+# Read each line of the README and parse the ones we are interested in.
+"""
+Projects
+    |
+    |-> Category
+    |       |
+    |       |-> Title
+    |       |-> Description
+    |       |
+    |       .
+    |       .
+    |       .
+    |       |
+    |       |-> Title
+    |       |-> Description
+    |
+    .
+    .
+    .
+    |
+    |-> Category
+            |
+            |-> Title
+            |-> Description
+            |
+            .
+            .
+            .
+"""
+fileLines = None
+with open('README.md', 'r') as file:
+    fileLines = file.readlines()
 
+projects = dict()
+for index, line in enumerate(fileLines):
+    line = line.strip()
+    if line == ('---------'):
+        category = fileLines[index - 1].strip()
+        projects[category] = dict()
+    if (not (line[:8] == '**Note**' )) and (line[:2] == '**'):
+        title, description = line.replace('**', '').split(' - ')
+        projects[category][title] = description
+        #if '\\x' in repr(line): print(title)    # Orginal README is non-ASCII
 
-#Remove this and implementing here
+# Search algorithm to find matching programs
+searchTerm = ''
+while searchTerm == '':
+    searchTerm = input('Please enter a search string: ').strip()
+for category in projects:
+    pass
