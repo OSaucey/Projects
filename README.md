@@ -1,6 +1,6 @@
 **Note**: I have made the following changes to the original [Projects repo](https://github.com/thekarangoel/Projects) created by [thekarangoel](https://github.com/thekarangoel):
-*    Added a support program (template.py) to make creating the python files and updating the README links easier.
-*    Modified the README.
+*    Added a support program (templateParser.py) to make creating the python files and updating the README links easier.
+*    Modified the README (removed things not needed by me, removed non-ASCII).
 *    Removed .gitignore.
 
 ========
