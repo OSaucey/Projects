@@ -1,5 +1,5 @@
 """
-+filename -- +programName
++filename -- +program_name
 
 +description
 

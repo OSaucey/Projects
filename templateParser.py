@@ -16,7 +16,7 @@ except NameError:
     pass
 
 # Dummy template
-bareTemplate = 'Error creating file!'
+bare_template = 'Error creating file!'
 
 # Read each line of the README and parse the ones we are interested in.
 """
@@ -47,36 +47,35 @@ Projects
             .
             .
 """
-fileLines = None
-with open('README.md', 'r') as file:
-    fileLines = file.readlines()
+file_lines = None
+with open('README.md', 'r') as readme_file:
+    file_lines = readme_file.readlines()
 
 projects = dict()
-for index, line in enumerate(fileLines):
+for index, line in enumerate(file_lines):
     line = line.strip()
     if line == ('---------'):
-        category = fileLines[index - 1].strip()
+        category = file_lines[index - 1].strip()
         projects[category] = dict()
     if (not (line[:8] == '**Note**' )) and (line[:2] == '**'):
         title, description = line.replace('**', '').split(' - ')
         projects[category][title] = description
-        #if '\\x' in repr(line): print(title)    # Orginal README is non-ASCII
 
-# Search algorithm to find matching programs
-searchTerm = ''
+# Search algorithm to find matching projects
+search_term = ''
 results = dict()
 count = 1
 print('')
-while searchTerm == '':
-    searchTerm = input('Please enter a search string: ').strip()
+while search_term == '':
+    search_term = input('Please enter a search string: ').strip()
 print('')
 for category, project in projects.iteritems():
     for title, desc in project.iteritems():
-        if searchTerm.lower() in title.lower():
+        if search_term.lower() in title.lower():
             results[count] = (category, title, desc)
             print('%d) %s/%s' %(count, category, title))
             count = count + 1
-print('%d) No matching projects foiund? Exit.' %(count))
+print('%d) No matching projects found? Exit.' %(count))
 choice = ''
 print('')
 
@@ -89,16 +88,18 @@ if choice == count:
 filename = ''
 while filename == '':
     filename = input("Please enter project filename: ").strip()
-if filename[-3:] != '.py': filename = filename + '.py'
+if filename[-3:] != '.py':
+    filename = filename + '.py'
 
-# Fill in bareTemplate with the appropriate fields and save the resulting file.
-with open('template.py', 'r') as bareTemplateFile:
-    bareTemplate = ''.join(bareTemplateFile.readlines())
-    bareTemplate = bareTemplate.replace('+filename', filename)
-    bareTemplate = bareTemplate.replace('+programName', results[choice][1])
-    bareTemplate = bareTemplate.replace('+description', results[choice][2])
-with open('%s//%s' %(results[choice][0], filename), 'w') as file:
-    file.write(bareTemplate)
+# Fill in bare_template with the appropriate fields and save the resulting file.
+with open('template.py', 'r') as bare_templateFile:
+    # TODO: update to dictionary for keys and values
+    bare_template = ''.join(bare_templateFile.readlines())
+    bare_template = bare_template.replace('+filename', filename)
+    bare_template = bare_template.replace('+program_name', results[choice][1])
+    bare_template = bare_template.replace('+description', results[choice][2])
+with open('%s//%s' %(results[choice][0], filename), 'w') as outputFile:
+    outputFile.write(bare_template)
 print('Project file created!')
 
 # TODO: Update Readme with link.

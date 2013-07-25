@@ -18,17 +18,17 @@ except NameError:
     pass
 
 vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'] # Didn't include y
-pigList = list()
+pig_list = list()
 
 # Process command line arguments. If none given, ask at run-time.
 if len(sys.argv) > 1:
     # sys.argv[0] is the python file being ran; ie, pigLatin.py
-    phraseList = sys.argv[1:]
+    phrase_list = sys.argv[1:]
 else:
-    phraseList = input("Enter a word/phrase: ").split(" ")
+    phrase_list = input("Enter a word/phrase: ").split(" ")
 
 # Take each word from the phrase ...
-for word in phraseList:
+for word in phrase_list:
     # and find the index of the first vowel letter.
     for index, letter in enumerate(word):
         if letter in vowels:
@@ -44,9 +44,9 @@ for word in phraseList:
         if word[0].isupper():
             pig = pig.capitalize()
    # Add the pig latin version of the word to the list.
-    pigList.append(pig)
+    pig_list.append(pig)
 
 # Turn the lists (english and pig latin) in sentences with spaces and output.
-phrase = ' '.join(phraseList)
-piggy = ' '.join(pigList)
+phrase = ' '.join(phrase_list)
+piggy = ' '.join(pig_list)
 print("Original: %s\nPigified: %s" % (phrase, piggy))
