@@ -4,10 +4,13 @@ templateParser.py -- Template Creator and README Updater
 Parses the list of avaliable projects, allows the user to select the one to be
 worked on, creates the barebones file, and updates the README with the link.
 
-TODO: Update README with links.
+TODO: Add varible for 'README.md' and others.
       Perform user checks.
+      Improve README search algorithm.
       Parse other fields; name, time, date, etc?
 """ 
+
+from os import rename
 
 # If using Python2, rename raw_input() to input(); no change for Python3.
 try:
@@ -102,4 +105,19 @@ with open('%s//%s' %(results[choice][0], filename), 'w') as outputFile:
     outputFile.write(bare_template)
 print('Project file created!')
 
-# TODO: Update Readme with link.
+# Search README for project line and add the file's link.
+with open('README.md', 'r') as readme_file, \
+        open('README.md.tmp', 'w') as readme_tmp_file:
+    file_lines = readme_file.readlines()
+    for line in file_lines:
+        line = line.strip().split(' - ')
+        if len(line) == 1:
+            line = line[0]
+        elif line[0] == ('**%s**' %(results[choice][1])):
+            line = '[%s](/%s/%s) - %s' %(line[0], results[choice][0],
+                filename, line[1])
+        else:
+            line = '%s - %s' %(line[0], line[1])
+        readme_tmp_file.write('%s\n' %(line))
+rename('README.md.tmp', 'README.md')
+print('README file update!')
