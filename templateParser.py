@@ -5,7 +5,7 @@ Parses the list of avaliable projects, allows the user to select the one to be
 worked on, creates the barebones file, and updates the README with the link.
 
 TODO: Add varible for 'README.md' and others.
-      Perform user checks.
+      Perform user checks and error handling.
       Improve README search algorithm.
       Parse other fields; name, time, date, etc?
 """ 

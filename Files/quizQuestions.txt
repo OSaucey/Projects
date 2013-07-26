@@ -1,0 +1,59 @@
+What is used to communicate with other computers using the telephone network?
+*LAN card 
+*microphone 
+*@modem 
+*telephone
+
+What is the system of connected computers in an office called?
+*WWW 
+*Internet 
+*@LAN 
+*WAN 
+	
+What is NOT a function of the CPU?
+*Ensuring program instructions are executed in the correct sequence. 
+*@Sending an e-mail. 
+*Carrying out calculations. 
+*Executing program instructions. 
+
+What application would be best used in to maintain patient medical details?
+*Spreadsheet 
+*Accounting package 
+*Drawing tool 
+*@Database 
+
+What is suitable for backing up all the data from a large file server?
+*@Tape drive 
+*Digital modem 
+*Plotter 
+*USB stick 
+
+What is an advantage of electronic documents?
+*They cannot be changed easily. 
+*They cannot be lost. 
+*@They can reduce the usage of paper. 
+*They can increase the usage of paper. 
+
+The speed of a computer's CPU can be measured in:
+*@Megahertz
+*Watts
+*CPUs per second
+*Terabytes
+
+What type of computer is used to operate large corporate systems and databases?
+*@Mainframe 
+*Personal Digital Assistant
+*RAID 
+*Desktop computer 
+
+What is normally at the end of a Systems Development process?
+*analysis 
+*design 
+*testing 
+*programming 
+
+What is a good password policy?
+*Passwords are changed occasionally so they are not forgotten. 
+*Passwords are based on user names so they are easy to remember. 
+*Passwords are made up of only numbers. 
+*@All passwords are changed regularly. 

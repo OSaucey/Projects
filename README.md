@@ -197,7 +197,7 @@ Web
 Files
 ---------
 
-**Quiz Maker** - Make an application which takes various questions form a file, picked randomly, and puts together a quiz for students. Each quiz can be different and then reads a key to grade the quizzes.
+[**Quiz Maker**](/Files/quizMaker.py) - Make an application which takes various questions form a file, picked randomly, and puts together a quiz for students. Each quiz can be different and then reads a key to grade the quizzes.
 
 **Quick Launcher** - A utility program that allows the user to assign various programs to icons on a toolbar. Then by clicking the buttons they can quickly launch the programs with parameters etc. Much like Windows quick launch.
 
